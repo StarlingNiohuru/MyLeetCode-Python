@@ -9,9 +9,9 @@ class TreeNode:
 
 
 class Solution:
-    seen = set()
     target = None
-    res = False
+    seen = None
+    res = None
 
     def inOrder(self, node: Optional[TreeNode]):
         if self.res:
@@ -27,6 +27,7 @@ class Solution:
 
     def findTarget(self, root: Optional[TreeNode], k: int) -> bool:
         self.target = k
+        self.seen = set()
+        self.res = False
         self.inOrder(root)
-        self.seen.clear()
         return self.res
