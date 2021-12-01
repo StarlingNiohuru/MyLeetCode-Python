@@ -7,3 +7,14 @@ class Solution:
             temp = temp * 10 + x % 10
             x //= 10
         return x == temp or x == (temp // 10)
+
+
+# int to string
+class Solution2:
+    def isPalindrome(self, x: int) -> bool:
+        s = str(x)
+        n = len(s) - 1
+        for i in range(0, (n + 1) // 2):
+            if s[i] != s[n - i]:
+                return False
+        return True
